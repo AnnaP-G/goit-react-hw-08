@@ -1,10 +1,11 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { minLengthDataValidation } from "../utils/constants";
 import { maxLengthDataValidation } from "../utils/constants";
-import { useDispatch } from "react-redux";
+
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
-import { apiAddContact } from "../../redux/contactsOps";
+import { apiAddContact } from "../../redux/contacts/operations";
+import { useDispatch } from "react-redux";
 
 const contactFormSchema = Yup.object().shape({
   name: Yup.string()

@@ -3,7 +3,7 @@ import {
   apiAddContact,
   apiDeleteContact,
   apiFetchContacts,
-} from "./contactsOps";
+} from "../contacts/operations.js";
 
 const INITIAL_STATE = {
   items: [],

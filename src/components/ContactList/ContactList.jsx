@@ -3,12 +3,14 @@ import Contact from "../Contact/Contact";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import {
+  selectNameFilter,
+  selectVisibleContacts,
+} from "../../redux/filters/selectors";
+import {
   selectContactsIsError,
   selectContactsIsLoading,
-  selectNameFilter,
   selectTotalContacts,
-  selectVisibleContacts,
-} from "../../redux/selectors";
+} from "../../redux/contacts/selectors";
 import css from "./ContactList.module.css";
 
 const ContactList = () => {

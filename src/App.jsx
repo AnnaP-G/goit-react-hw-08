@@ -6,6 +6,10 @@ import { Suspense, lazy, useEffect } from "react";
 import { apiFetchContacts } from "./redux/contacts/operations";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
+import Navigation from "./components/Navigation/Navigation";
+import Layout from "./components/Layout/Layout";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -23,23 +27,23 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <main>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-      <div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="register" element={<RegistrationForm />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="login" element={<LoginForm />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {/* <div>
         <h1>Phonebook</h1>
         <ContactForm />
         <SearchBox />
         <ContactList />
-      </div>
-    </main>
+      </div> */}
+    </Layout>
   );
 };
 

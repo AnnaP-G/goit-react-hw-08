@@ -1,9 +1,14 @@
 import AppBar from "../AppBar/AppBar";
+import { Suspense } from "react";
+import Loader from "../Loader/Loader";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
-      <AppBar />
+      <Suspense fallback={<Loader />}>
+        <AppBar />
+        <main>{children}</main>
+      </Suspense>
     </div>
   );
 };

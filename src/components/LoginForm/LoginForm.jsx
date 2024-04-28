@@ -6,6 +6,8 @@ import {
   minLengthDataEmailValidation,
   minPasswordDataValidation,
 } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/operations";
 
 const loginUserFormSchema = Yup.object().shape({
   email: Yup.string()
@@ -32,7 +34,9 @@ const FormRegistrationInitialValues = {
 };
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
+    dispatch(login(values));
     actions.resetForm();
   };
 

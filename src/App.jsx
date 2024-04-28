@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Layout from "./components/Layout/Layout";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 import LoginForm from "./components/LoginForm/LoginForm";
+import { refreshUser } from "./redux/auth/operations";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -23,17 +24,21 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(apiFetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(apiFetchContacts());
+  // }, [dispatch]);
 
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegistrationPage />} />
-        <Route path="register" element={<RegistrationForm />} />
+        {/* <Route path="register" element={<RegistrationForm />} /> */}
         <Route path="/login" element={<LoginPage />} />
-        <Route path="login" element={<LoginForm />} />
+        {/* <Route path="login" element={<LoginForm />} /> */}
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

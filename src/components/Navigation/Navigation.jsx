@@ -9,26 +9,16 @@ const addNavLinkActiveClass = ({ isActive }) =>
 
 const Navigation = () => {
   const isSignedIn = useSelector(selectIsSignedIn);
+
   return (
     <nav className={css.nav}>
       <NavLink className={addNavLinkActiveClass} to="/">
         Home
       </NavLink>
-      {isSignedIn ? (
-        <>
-          <NavLink className={addNavLinkActiveClass} to="/login">
-            Login
-          </NavLink>
-          <NavLink className={addNavLinkActiveClass} to="/contacts">
-            Contacts
-          </NavLink>
-        </>
-      ) : (
-        <>
-          <NavLink className={addNavLinkActiveClass} to="/register">
-            Register
-          </NavLink>
-        </>
+      {isSignedIn && (
+        <NavLink className={addNavLinkActiveClass} to="/contacts">
+          Contacts
+        </NavLink>
       )}
     </nav>
   );

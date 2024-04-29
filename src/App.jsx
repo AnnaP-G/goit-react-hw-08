@@ -36,17 +36,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegistrationPage />} />
-        {/* <Route path="register" element={<RegistrationForm />} /> */}
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route path="login" element={<LoginForm />} /> */}
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <div>
         <h1>Phonebook</h1>
-        <ContactForm />
-        <SearchBox />
-        <ContactList />
+ 
       </div> */}
     </Layout>
   );

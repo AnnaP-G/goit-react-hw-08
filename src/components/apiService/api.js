@@ -16,3 +16,7 @@ export const deleteContact = async (contactId) => {
   const data = await axios.delete(`/contacts/${contactId}`);
   return data;
 };
+
+export const instance = axios.create({
+  baseURL: "https://connections-api.herokuapp.com",
+});

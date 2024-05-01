@@ -35,6 +35,7 @@ const FormRegistrationInitialValues = {
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
     dispatch(login(values));
     actions.resetForm();

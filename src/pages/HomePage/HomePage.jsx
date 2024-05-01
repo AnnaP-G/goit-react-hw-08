@@ -3,7 +3,10 @@ import { Helmet } from "react-helmet-async";
 const HomePage = () => {
   return (
     <>
-      <Helmet>Home Page</Helmet>
+      <Helmet>
+        <title>Home Page</title>
+      </Helmet>
+      <h1>Welcome to your contacts manager! </h1>
     </>
   );
 };

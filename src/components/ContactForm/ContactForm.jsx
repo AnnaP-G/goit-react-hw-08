@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { apiAddContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const contactFormSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,10 +26,12 @@ const FormInitialValues = {
 
 const ContactForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (values, actions) => {
     dispatch(apiAddContact({ ...values }));
     actions.resetForm();
+    navigate("/contacts");
   };
 
   return (

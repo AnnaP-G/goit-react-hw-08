@@ -1,13 +1,13 @@
 .contactItem {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 5px;
     position: relative;
     width: 325px;
     border: 2px solid rgb(52, 50, 50);
     border-radius: 5px;
     padding: 10px;
-    justify-content: center;
+    justify-content: start;
 }
 
 .contactText {
@@ -17,6 +17,15 @@
 
 }
 
+.contactLetter {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
 .contactBtn {
     position: absolute;
     width: 80px;

@@ -5,6 +5,8 @@ import { Suspense, lazy, useEffect } from "react";
 import { refreshUser } from "./redux/auth/operations";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
@@ -12,8 +14,6 @@ const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const RegistrationPage = lazy(() =>
   import("./pages/RegistrationPage/RegistrationPage")
 );
-const NotFound = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
-
 const App = () => {
   const dispatch = useDispatch();
 
@@ -32,9 +32,7 @@ const App = () => {
               <RestrictedRoute
                 redirectTo="/contacts"
                 component={<RegistrationPage />}
-              >
-                <RegistrationPage />
-              </RestrictedRoute>
+              />
             }
           />
           <Route
@@ -43,7 +41,7 @@ const App = () => {
               <RestrictedRoute
                 redirectTo="/contacts"
                 component={<LoginPage />}
-              ></RestrictedRoute>
+              />
             }
           />
           <Route
@@ -52,7 +50,8 @@ const App = () => {
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="addNewContact" element={<ContactForm />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Layout>

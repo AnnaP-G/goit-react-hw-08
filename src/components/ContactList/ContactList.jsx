@@ -2,14 +2,12 @@ import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import {
-  selectNameFilter,
-  selectVisibleContacts,
-} from "../../redux/filters/selectors";
+import { selectNameFilter } from "../../redux/filters/selectors";
 import {
   selectContactsIsError,
   selectContactsIsLoading,
   selectTotalContacts,
+  selectVisibleContacts,
 } from "../../redux/contacts/selectors";
 import css from "./ContactList.module.css";
 
@@ -31,6 +29,9 @@ const ContactList = () => {
       {noContacts && <p>No contacts found.</p>}
       {nameFilter && foundContactsCount > 0 && (
         <p>Found {foundContactsCount} contacts.</p>
+      )}
+      {foundContactsCount === 0 && !nameFilter && (
+        <p>You have no contacts yet. Add your first contact!</p>
       )}
       {!nameFilter && <p>Total contacts: {totalContacts}</p>}
       <ul className={css.contactList}>

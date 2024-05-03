@@ -29,7 +29,7 @@ const ContactForm = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (values, actions) => {
-    dispatch(apiAddContact({ ...values }));
+    dispatch(apiAddContact(values));
     actions.resetForm();
     navigate("/contacts");
   };

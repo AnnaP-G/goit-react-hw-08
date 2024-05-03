@@ -35,10 +35,7 @@ const contactsSlice = createSlice({
       })
 
       .addCase(apiLogout.fulfilled, (state) => {
-        state.userData = {
-          name: null,
-          email: null,
-        };
+        state.items = [];
         state.token = null;
         state.isLoading = false;
       })
@@ -64,8 +61,8 @@ const contactsSlice = createSlice({
           apiLogout.rejected
         ),
         (state) => {
-          state.isLoading = true;
-          state.isError = false;
+          state.isLoading = false;
+          state.isError = true;
         }
       ),
 });

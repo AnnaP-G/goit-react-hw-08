@@ -1,11 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instance } from "../../components/apiService/api.js";
+import { instance } from "../../components/apiService/api";
 
 export const apiFetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkApi) => {
     try {
       const { data } = await instance.get("/contacts");
+      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

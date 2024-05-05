@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 320px;
     border-radius: 5px;
     padding: 16px;
     background: linear-gradient(to bottom, #010408, #0A4861);
@@ -12,6 +11,7 @@
     margin: 0 auto;
     color: #70BFCC;
     gap: 10px;
+    width: 350px;
 }
 
 .searchBoxTitle {
@@ -20,7 +20,7 @@
 }
 
 .searchBoxInput {
-    width: 280px;
+    width: 300px;
     height: 20px;
     font-size: 14px;
     border: 2px solid rgb(52, 50, 50);

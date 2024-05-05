@@ -14,6 +14,10 @@ const contactFormSchema = Yup.object().shape({
     .min(minLengthDataValidation, "Too Short!")
     .max(maxLengthDataValidation, "Too Long!"),
   number: Yup.string()
+    .matches(
+      /^[+\0-9]{3,15}$/,
+      "Phone number is not valid, must be only digits"
+    )
     .required("Required")
     .min(minLengthDataValidation, "Too Short!")
     .max(maxLengthDataValidation, "Too Long!"),

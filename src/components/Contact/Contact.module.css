@@ -1,19 +1,21 @@
 .contactItem {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     position: relative;
     width: 375px;
     border: 2px solid rgb(52, 50, 50);
     border-radius: 5px;
     padding: 10px;
     justify-content: start;
+    /* text-align: center; */
 }
 
 .contactText {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     color: #70BFCC;
+
 }
 
 .contactLetter {
@@ -25,11 +27,13 @@
     align-items: center;
     justify-content: center;
     margin-right: 5px;
+    text-align: center;
+    align-items: center;
 }
 .contactBtn {
     position: absolute;
     width: 70px;
-    left: 220px;
+    left: 280px;
     height: 30px;
     font-size: 14px;
     color: #70BFCC;

@@ -28,3 +28,13 @@
 .navLink:active {
     background: linear-gradient(to top, #010408, #70BFCC);
 }
+
+@media screen and (min-width: 768px) {
+    .navLink {
+        width: 90px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 1.11;
+        letter-spacing: 0.04em;
+    }
+}

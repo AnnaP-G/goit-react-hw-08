@@ -1,5 +1,5 @@
 .text {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     text-align: center;
     color: #70BFCC;
@@ -11,6 +11,12 @@
 
 @media screen and (min-width: 768px) {
     .text {
-            font-size: 44px;
-        }
+        font-size: 44px;
+    }
+}
+
+@media screen and (min-width: 1158px) {    
+    .text {
+        font-size: 60px;
+    }
 }

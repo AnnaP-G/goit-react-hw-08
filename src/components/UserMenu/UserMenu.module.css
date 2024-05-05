@@ -34,3 +34,21 @@
 .btnLogout:hover {
     background: linear-gradient(to top, #010408, #70BFCC);
 }
+
+@media screen and (min-width: 768px) {
+    .container {
+        margin-left: 200px;
+    }
+
+    .userName {
+        font-size: 18px;
+    }
+
+    .btnLogout {
+        width: 90px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 1.11;
+        letter-spacing: 0.04em;
+    }
+}

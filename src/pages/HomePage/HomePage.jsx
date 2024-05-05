@@ -7,7 +7,7 @@ const HomePage = () => {
       <Helmet>
         <title>Home Page</title>
       </Helmet>
-      <div>
+      <div className={css.container}>
         <h1 className={css.text}>Welcome to your contacts manager! </h1>
       </div>
     </>

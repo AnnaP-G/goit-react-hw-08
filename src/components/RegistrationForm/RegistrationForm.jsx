@@ -61,7 +61,7 @@ const RegistrationForm = () => {
         onSubmit={handleSubmit}
       >
         <Form className={css.form}>
-          <h2>Register user</h2>
+          <h2 className={css.titleForm}>Register user</h2>
           <label className={css.formLabel}>
             <span className={css.formSpan}>Name</span>
             <Field

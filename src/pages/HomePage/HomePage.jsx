@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import css from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
@@ -6,7 +7,9 @@ const HomePage = () => {
       <Helmet>
         <title>Home Page</title>
       </Helmet>
-      <h1>Welcome to your contacts manager! </h1>
+      <div>
+        <h1 className={css.text}>Welcome to your contacts manager! </h1>
+      </div>
     </>
   );
 };

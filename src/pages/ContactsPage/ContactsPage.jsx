@@ -6,13 +6,14 @@ import { apiFetchContacts } from "../../redux/contacts/operations";
 import { selectContactsIsLoading } from "../../redux/contacts/selectors";
 import { NavLink, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import css from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectContactsIsLoading);
 
   useEffect(() => {
-    dispatch(apiFetchContacts);
+    dispatch(apiFetchContacts());
   }, [dispatch]);
 
   return (
@@ -21,7 +22,9 @@ const ContactsPage = () => {
         <title>Contacts Page</title>
       </Helmet>
       <NavLink to="/addNewContact">
-        <button type="button">Add new contact</button>
+        <button className={css.btnLink} type="button">
+          Add new contact
+        </button>
       </NavLink>
       <Outlet />
       <SearchBox />

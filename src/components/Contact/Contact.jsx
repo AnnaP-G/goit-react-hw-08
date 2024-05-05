@@ -24,7 +24,7 @@ const Contact = ({ name, number, id }) => {
       <div>
         <p className={css.contactText}> {name}</p>
         <a className={css.contactText} href={`tel:${number}`}>
-          <span>📞</span>
+          <span>📞 </span>
           {number}
         </a>
       </div>

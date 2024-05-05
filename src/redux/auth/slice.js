@@ -49,7 +49,7 @@ const authSlice = createSlice({
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSignedIn = true;
-        state.user = action.payload;
+        state.userData = action.payload;
       })
 
       .addCase(refreshUser.rejected, (state) => {

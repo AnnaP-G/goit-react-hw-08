@@ -7,11 +7,17 @@ const addNavLinkActiveClass = ({ isActive }) =>
 
 const AuthNav = () => {
   return (
-    <div>
-      <NavLink className={addNavLinkActiveClass} to="/register">
+    <div className={`${css.navigation} ${css.link}`}>
+      <NavLink
+        className={`${addNavLinkActiveClass} ${css.navLink}`}
+        to="/register"
+      >
         Register
       </NavLink>
-      <NavLink className={addNavLinkActiveClass} to="/login">
+      <NavLink
+        className={`${addNavLinkActiveClass} ${css.navLink}`}
+        to="/login"
+      >
         Log In
       </NavLink>
     </div>

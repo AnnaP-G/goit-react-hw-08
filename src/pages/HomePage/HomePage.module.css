@@ -1,0 +1,9 @@
+.text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #70BFCC;
+    font-size: 22px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+}

@@ -23,15 +23,17 @@ const ContactList = () => {
   const foundContactsCount = filteredContacts.length;
 
   return (
-    <div>
+    <div className={css.container}>
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      {noContacts && <p>No contacts found.</p>}
+      {noContacts && <p className={css.textFound}>No contacts found.</p>}
       {nameFilter && foundContactsCount > 0 && (
         <p>Found {foundContactsCount} contacts.</p>
       )}
       {foundContactsCount === 0 && !nameFilter && (
-        <p>You have no contacts yet. Add your first contact!</p>
+        <p className={css.textNotContact}>
+          You have no contacts yet. Add your first contact!
+        </p>
       )}
       {!nameFilter && <p>Total contacts: {totalContacts}</p>}
       <ul className={css.contactList}>

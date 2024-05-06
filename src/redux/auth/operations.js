@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { instance } from "../../components/apiService/api";
 
-export const setToken = (token) => {
+export const setAuthHeader = (token) => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-export const clearToken = () => {
+export const clearAuthHeader = () => {
   instance.defaults.headers.common.Authorization = "";
 };
 
@@ -14,7 +14,7 @@ export const register = createAsyncThunk(
   async (formData, thunkApi) => {
     try {
       const { data } = await instance.post("/users/signup", formData);
-      setToken(data.token);
+      setAuthHeader(data.token);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -27,7 +27,7 @@ export const login = createAsyncThunk(
   async (formData, thunkApi) => {
     try {
       const { data } = await instance.post("/users/login", formData);
-      setToken(data.token);
+      setAuthHeader(data.token);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -44,7 +44,7 @@ export const refreshUser = createAsyncThunk(
       return thunkApi.rejectWithValue("Unable to fetch user");
     }
     try {
-      setToken(token);
+      setAuthHeader(token);
       const { data } = await instance.get("/users/current");
       return data;
     } catch (error) {
@@ -58,7 +58,7 @@ export const apiLogout = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       await instance.post("/users/logout");
-      clearToken();
+      clearAuthHeader();
       return;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
